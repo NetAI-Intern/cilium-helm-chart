@@ -12,7 +12,17 @@ tls:
 
 bgp:
   enabled: false
-  
+
 hostPort:
   enabled: true
-  
+
+proxy:
+
+  prometheus:
+    # -- Deprecated in favor of envoy.prometheus.enabled
+    enabled: true
+    # -- Deprecated in favor of envoy.prometheus.port
+    port: ~
+  # -- Regular expression matching compatible Istio sidecar istio-proxy
+  # container image names
+  sidecarImageRegex: "cilium/istio_proxy"
