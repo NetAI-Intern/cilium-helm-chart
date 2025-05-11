@@ -17,7 +17,6 @@ metadata:
     {{- end }}
 
 spec:
-  clusterIP: None
   selector:
     k8s-app: cilium
   ports:
