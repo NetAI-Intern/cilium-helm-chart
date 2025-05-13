@@ -1,5 +1,8 @@
 k8sServiceHost: "192.168.30.11"
-
+  peerService:
+    targetPort: 4244
+    clusterDomain: sandbox.cluster
+    
 tls:
   certs:
     server:
