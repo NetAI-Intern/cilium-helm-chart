@@ -1381,7 +1381,7 @@ hubble:
     targetPort: 4244
     # -- The cluster domain to use to query the Hubble Peer service. It should
     # be the local cluster.
-    clusterDomain: custer.local
+    clusterDomain: cluster.local
   # -- TLS configuration for Hubble
   tls:
     # -- Enable mutual TLS for listenAddress. Setting this value to false is
