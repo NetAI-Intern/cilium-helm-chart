@@ -4,11 +4,7 @@ peerService:
   targetPort: 4244
   clusterDomain: sandbox.cluster
 
-hubble:
-  peerService:
-    targetPort: 4244
-    clusterDomain: sandbox.cluster
-
+  
 tls:
   certs:
     server:
@@ -25,6 +21,9 @@ authentication:
       install:
         enabled: true
 hubble:
+  peerService:
+      targetPort: 4244
+      clusterDomain: sandbox.cluster
   metrics:
     serviceMonitor:
       enabled: true
