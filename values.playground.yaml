@@ -4,6 +4,11 @@ peerService:
   targetPort: 4244
   clusterDomain: sandbox.cluster
 
+hubble:
+  peerService:
+    targetPort: 4244
+    clusterDomain: sandbox.cluster
+
 tls:
   certs:
     server:
