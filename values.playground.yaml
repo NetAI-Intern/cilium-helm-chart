@@ -26,12 +26,12 @@ hubble:
       type: LoadBalancer
     baseUrl: "/hubble"
     ingress:
-        enabled: true
-        annotations:
-          kubernetes.io/ingress.class: nginx
-          nginx.ingress.kubernetes.io/rewrite-target: "/$2"
-        hosts:
-          - "*"
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: nginx
+        nginx.ingress.kubernetes.io/rewrite-target: "/$2"
+      hosts:
+        - "*"
             
 
   peerService:
