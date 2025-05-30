@@ -1835,6 +1835,8 @@ hubble:
         kubernetes.io/ingress.class: nginx
       # kubernetes.io/tls-acme: "true"
       className: ""
+      hosts:
+        - hubble.local
       labels: {}
       tls: []
       #  - secretName: chart-example-tls
