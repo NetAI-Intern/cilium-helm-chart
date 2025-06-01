@@ -53,4 +53,5 @@ envoy:
   debug:
     admin:
       enabled: true
+      port: 15000
     
