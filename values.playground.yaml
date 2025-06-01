@@ -46,3 +46,10 @@ hubble:
 prometheus:
   serviceMonitor:
     enabled: true
+
+debug:
+  enabled: true
+envoy:
+  debug:
+    enabled: true
+    
