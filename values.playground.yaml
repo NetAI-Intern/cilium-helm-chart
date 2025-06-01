@@ -51,5 +51,6 @@ debug:
   enabled: true
 envoy:
   debug:
-    enabled: true
+    admin:
+      enabled: true
     
