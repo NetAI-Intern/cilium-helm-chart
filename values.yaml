@@ -1,0 +1,78 @@
+k8sServiceHost: "192.168.20.11"
+k8sServicePort: 6443
+autoDirectNodeRoutes: true
+
+l2announcements:
+  enabled: false
+
+gatewayAPI:
+  enabled: true # 수정
+  enableProxyProtocol: false
+  enableAppProtocol: true # 수정 
+  enableAlpn: true
+
+
+hostPort:
+  enabled: true
+socketLB:
+  enabled: true
+externalIPs:
+  enabled: true
+
+peerService:
+  targetPort: 4244
+  clusterDomain: bee.cluster
+hubble:
+  enabled: true
+  ui:
+    service:
+      type: LoadBalancer
+    ingress:
+      enabled: true
+      className: nginx
+  peerService:
+      targetPort: 4244
+      clusterDomain: bee.cluster
+  metrics:
+    enabled: # 수정
+      - dns
+      - drop
+      - tcp
+      - flow
+      - icmp
+      - http
+    enableOpenMetrics: true # 수정
+    serviceMonitor:
+      enabled: true
+  relay:
+    enabled: true
+    prometheus:
+      serviceMonitor:
+        enabled: true
+    rollOutPods: true
+prometheus:
+  metricsService: true # 수정
+  enabled: true # 수정
+  serviceMonitor:
+    enabled: true
+    trustCRDsExist: true
+debug:
+  enabled: true
+envoy:
+  debug:
+    admin:
+      enabled: true
+      port: 15000
+
+kubeProxyReplacement: true
+ipv4NativeRoutingCIDR: "10.20.0.0/16"
+routingMode: native # 수정
+
+
+ipam:
+  mode: "cluster-pool"
+  ciliumNodeUpdateRate: "15s"
+  multiPoolPreAllocation: ""
+  installUplinkRoutesForDelegatedIPAM: false
+  operator:
+    clusterPoolIPv4PodCIDRList: ["10.20.64.0/18"]
